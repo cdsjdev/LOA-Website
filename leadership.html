@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leadership — Lights On America</title>
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .bio-section { background: var(--cream); }
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .bio-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    .portrait {
+      background: var(--dark);
+      border-radius: 6px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7rem;
+      border: 2px solid rgba(200,148,10,0.22);
+      margin-bottom: 24px;
+    }
+    .sidebar-name { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .sidebar-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
+    .sidebar-info { font-size: 0.84rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
+    .medals { display: flex; flex-direction: column; gap: 8px; }
+    .medal { background: var(--dark); color: var(--gold-light); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid rgba(200,148,10,0.2); text-align: center; }
+
+    .bio-content > * + * { margin-top: 32px; }
+    .bio-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(200,148,10,0.2); }
+    .bio-content p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.85; }
+    .bio-content p + p { margin-top: 14px; }
+
+    .timeline { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #ede9e0;
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-year { font-size: 0.8rem; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; padding-top: 2px; }
+    .timeline-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .timeline-item p { font-size: 0.86rem; color: var(--text-mid); line-height: 1.65; }
+
+    .service-highlights { background: var(--dark3); }
+    .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+    .highlight-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(200,148,10,0.14);
+      border-radius: 5px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .highlight-card .hi-icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+    .highlight-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--gold-light); margin-bottom: 10px; }
+    .highlight-card p { font-size: 0.84rem; color: #707060; line-height: 1.7; }
+
+    .company-section { background: var(--off-white); }
+    .company-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .company-text p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 16px; }
+    .company-img { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.12); border: 1px solid rgba(200,148,10,0.12); }
+    .company-img img { width: 100%; display: block; object-fit: cover; aspect-ratio: 4/3; }
+
+    @media (max-width: 900px) {
+      .bio-grid { grid-template-columns: 1fr; }
+      .bio-sidebar { position: static; }
+      .highlights-grid, .company-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="util-bar">
+    <div class="util-inner">
+      <div class="util-left">
+        <span>★ Veteran Owned Small Business (VOSB)</span>
+        <span class="util-divider">|</span>
+        <span>Pittsburgh, PA</span>
+      </div>
+      <div class="util-right">
+        <a href="tel:4123641600">412-364-1600</a>
+        <span class="util-divider">|</span>
+        <a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap"><img src="logo.svg" alt="Lights On America"/></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="leadership.html" class="active">Leadership</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Leadership</p>
+      <h1>Leadership</h1>
+      <p>Guided by a decorated military veteran whose discipline, vision, and commitment to excellence define every aspect of how we operate.</p>
+    </div>
+  </div>
+
+  <section class="bio-section">
+    <div class="section-inner">
+      <div class="bio-grid">
+
+        <div class="bio-sidebar">
+          <div class="portrait">★</div>
+          <div class="sidebar-name">Matthew Drozd</div>
+          <div class="sidebar-title">Founder &amp; President</div>
+          <div class="sidebar-info">
+            Lt. Col. USAF Ret.<br/>
+            The Drozd Group Inc.<br/>
+            Pittsburgh, PA
+          </div>
+          <div class="medals">
+            <span class="medal">U.S. Army Veteran</span>
+            <span class="medal">U.S. Air Force Veteran</span>
+            <span class="medal">Lt. Col. USAF Ret.</span>
+            <span class="medal">Pentagon — 9/11</span>
+            <span class="medal">Penn State Development</span>
+            <span class="medal">VOSB Certified</span>
+          </div>
+        </div>
+
+        <div class="bio-content">
+          <div>
+            <h3>About Matthew Drozd</h3>
+            <p>Matthew Drozd is the founder and president of Lights On America and The Drozd Group Inc. — a leader whose career spans extraordinary military service, national-level government work, and decades of private-sector innovation.</p>
+            <p>A highly decorated officer, Matt served with distinction in both the United States Army and the United States Air Force, achieving the rank of Lieutenant Colonel. His military career was defined by leadership at the highest levels of American government and defense.</p>
+          </div>
+
+          <div>
+            <h3>Pentagon Service — September 11, 2001</h3>
+            <p>One of the defining chapters of Matt's service came during his time at the Pentagon, where he was present on September 11, 2001. During this period, he served three different Chairmen of the Joint Chiefs of Staff — the nation's highest-ranking military officer — as well as the Secretary of Defense and the Secretary of State.</p>
+            <p>This experience — operating at the intersection of military strategy and national security at one of the most consequential moments in American history — instilled in Matt a sense of mission, resilience, and accountability that continues to define how Lights On America operates today.</p>
+          </div>
+
+          <div>
+            <h3>Academic &amp; Public Service</h3>
+            <p>Beyond his military accomplishments, Matthew Drozd was one of the top development officers for Penn State University — one of the nation's leading research institutions. His fundraising and development work at Penn State demonstrated his ability to build relationships, secure resources, and deliver results in high-pressure environments.</p>
+            <p>His service and reputation were such that he was referred to serve as the Secretary of the Army — a testament to the esteem in which he was held by military and government leadership alike.</p>
+          </div>
+
+          <div>
+            <h3>Founding Lights On America</h3>
+            <p>Matt founded Lights On America with a mission to bring the same level of excellence, innovation, and accountability that defined his military career to the American energy and technology marketplace. Over forty-five years, his vision has shaped the company into a nationally recognized leader serving clients from prestigious universities to government agencies and Fortune 500 companies.</p>
+            <p>Under his leadership, Lights On America has built a reputation for solving complicated problems with creative, cutting-edge solutions — always delivering on time, always exceeding expectations.</p>
+          </div>
+
+          <div>
+            <h3>Career Timeline</h3>
+            <ul class="timeline">
+              <li class="timeline-item">
+                <span class="timeline-year">U.S. Army</span>
+                <div>
+                  <h4>Decorated Military Officer</h4>
+                  <p>Served with distinction in the United States Army, building the leadership and operational expertise that would define his career.</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">U.S. Air Force</span>
+                <div>
+                  <h4>Lieutenant Colonel, USAF</h4>
+                  <p>Rose to the rank of Lieutenant Colonel in the United States Air Force, serving in senior leadership and strategic planning roles.</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">2001</span>
+                <div>
+                  <h4>Pentagon — September 11th</h4>
+                  <p>Served at the Pentagon during the September 11th attacks, supporting three Chairmen of the Joint Chiefs of Staff, the Secretary of Defense, and the Secretary of State.</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">Penn State</span>
+                <div>
+                  <h4>Top Development Officer</h4>
+                  <p>One of the leading development officers for Penn State University, overseeing major institutional fundraising and strategic partnerships.</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-year">LOA</span>
+                <div>
+                  <h4>Founder, Lights On America</h4>
+                  <p>Founded Lights On America, growing it into a nationally recognized leader in energy-efficient technology and innovative engineering solutions over 45+ years.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="service-highlights">
+    <div class="section-inner">
+      <p class="section-label" style="color:var(--gold-light)">The Drozd Standard</p>
+      <h2 class="section-title light">What Military Leadership Brings to Business</h2>
+      <div class="gold-rule"></div>
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <span class="hi-icon">🎯</span>
+          <h3>Mission-Driven Execution</h3>
+          <p>Every project is treated as a mission with defined objectives, timelines, and accountability — no ambiguity, no excuses, only results.</p>
+        </div>
+        <div class="highlight-card">
+          <span class="hi-icon">🛡️</span>
+          <h3>Integrity Under Pressure</h3>
+          <p>Forged through crisis-level service at the Pentagon, our leadership culture prioritizes honesty and composure when it matters most.</p>
+        </div>
+        <div class="highlight-card">
+          <span class="hi-icon">🤝</span>
+          <h3>Strategic Partnership</h3>
+          <p>Pentagon-level experience building coalitions across agencies translates directly into our ability to manage complex, multi-stakeholder projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-section">
+    <div class="section-inner">
+      <div class="company-grid">
+        <div class="company-text">
+          <p class="section-label">The Drozd Group</p>
+          <h2 class="section-title">The Organization Behind Lights On America</h2>
+          <div class="gold-rule"></div>
+          <p>Lights On America operates as part of The Drozd Group Inc. — a Pittsburgh-based holding entity that reflects Matt Drozd's broader vision for American industry and innovation.</p>
+          <p>Headquartered at RJ Casey Industrial Park in Pittsburgh, Pennsylvania, The Drozd Group provides the operational infrastructure and executive oversight that allows Lights On America to serve clients from coast to coast with consistent quality and responsiveness.</p>
+          <p>The group's east coast and west coast satellite offices extend this reach further, ensuring that no client is too far from direct, attentive service.</p>
+          <a href="contact.html" class="btn-primary" style="margin-top:8px">Contact Our Team</a>
+        </div>
+        <div class="company-img">
+          <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=800&q=80" alt="Professional business headquarters Pittsburgh"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="section-inner">
+      <h2>Work with a Leader Who Delivers</h2>
+      <p>Matthew Drozd and the Lights On America team are ready to bring their expertise to your next project.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Get in Touch</a>
+        <a href="services.html" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="logo.svg" alt="Lights On America" class="footer-logo"/>
+          <p class="footer-about">Innovative leader in energy-efficient technology, advanced charging infrastructure, and custom software and hardware solutions. Serving North America for 45+ years.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#lighting">Energy Lighting</a></li>
+            <li><a href="services.html#charging">Charging Stations</a></li>
+            <li><a href="services.html#software">Software &amp; Hardware</a></li>
+            <li><a href="services.html#energy">Alternative Energy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>RJ Casey Industrial Park<br/>Pittsburgh, PA 15233<br/><br/><a href="tel:4123641600">412-364-1600</a><br/><a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a></address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024 The Drozd Group Inc. — Lights On America. All rights reserved.</span>
+        <span class="footer-vosb">★ Veteran Owned Small Business</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

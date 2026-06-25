@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — Lights On America</title>
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .contact-main { background: var(--cream); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* Left column — info */
+    .contact-info h2 { font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .contact-info > p { font-size: 0.98rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 32px; }
+
+    .offices { display: flex; flex-direction: column; gap: 24px; margin-bottom: 36px; }
+    .office-card {
+      background: white;
+      border: 1px solid #e4e0d4;
+      border-radius: 5px;
+      padding: 24px 28px;
+      border-left: 3px solid var(--gold);
+    }
+    .office-card h4 { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 10px; }
+    .office-card address { font-style: normal; font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; }
+    .office-card address a { color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .office-card address a:hover { color: var(--gold); }
+
+    /* Right column — form */
+    .form-card {
+      background: white;
+      border: 1px solid #e4e0d4;
+      border-radius: 6px;
+      padding: 44px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .form-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .form-card > p { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 28px; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group label { display: block; font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); font-weight: 700; margin-bottom: 7px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      border: 1.5px solid #dedad2;
+      border-radius: 3px;
+      padding: 11px 14px;
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #fdfcf9;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200,148,10,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit { width: 100%; margin-top: 8px; }
+
+    /* Map placeholder */
+    .map-section { background: var(--dark3); padding: 0; }
+    .map-inner { max-width: 1100px; margin: 0 auto; padding: 56px 32px; }
+    .map-placeholder {
+      background: var(--dark);
+      border: 1px solid rgba(200,148,10,0.18);
+      border-radius: 6px;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: #606054;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .map-placeholder .map-icon { font-size: 3rem; opacity: 0.5; }
+    .map-placeholder p { font-size: 0.85rem; color: #505048; max-width: 320px; line-height: 1.65; }
+
+    /* FAQ */
+    .faq { background: var(--off-white); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; }
+    .faq-item { background: white; border: 1px solid #e4e0d4; border-radius: 5px; padding: 28px; }
+    .faq-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .faq-item p { font-size: 0.87rem; color: var(--text-mid); line-height: 1.75; }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="util-bar">
+    <div class="util-inner">
+      <div class="util-left">
+        <span>★ Veteran Owned Small Business (VOSB)</span>
+        <span class="util-divider">|</span>
+        <span>Pittsburgh, PA</span>
+      </div>
+      <div class="util-right">
+        <a href="tel:4123641600">412-364-1600</a>
+        <span class="util-divider">|</span>
+        <a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap"><img src="logo.svg" alt="Lights On America"/></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html" class="nav-cta active" style="background:var(--gold-dark)!important">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</p>
+      <h1>Let's Work Together</h1>
+      <p>Whether you have a specific project in mind or simply want to explore what Lights On America can do for your organization, we're ready to listen.</p>
+    </div>
+  </div>
+
+  <section class="contact-main">
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p class="section-label">Reach Out</p>
+          <h2>Get in Touch</h2>
+          <div class="gold-rule"></div>
+          <p>Our team is available to discuss your project, answer questions, or provide a consultation. We pride ourselves on responsiveness — expect to hear from us quickly.</p>
+
+          <div class="offices">
+            <div class="office-card">
+              <h4>Headquarters — Pittsburgh, PA</h4>
+              <address>
+                The Drozd Group Inc.<br/>
+                RJ Casey Industrial Park<br/>
+                Pittsburgh, PA 15233<br/><br/>
+                <a href="tel:4123641600">📞 412-364-1600</a><br/>
+                <a href="fax:4123643333">📠 412-364-3333 (Fax)</a><br/>
+                <a href="mailto:info@thedrozdgroup.com">✉️ info@thedrozdgroup.com</a><br/>
+                <a href="http://www.thedrozdgroup.com" target="_blank">🌐 www.thedrozdgroup.com</a>
+              </address>
+            </div>
+            <div class="office-card">
+              <h4>East Coast Office</h4>
+              <address>
+                Serving the Eastern United States<br/>
+                and Atlantic Canada<br/><br/>
+                <a href="tel:4123641600">📞 Contact headquarters for access</a>
+              </address>
+            </div>
+            <div class="office-card">
+              <h4>West Coast Office</h4>
+              <address>
+                Serving the Western United States<br/>
+                and British Columbia<br/><br/>
+                <a href="tel:4123641600">📞 Contact headquarters for access</a>
+              </address>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Send Us a Message</h3>
+          <p>Fill out the form below and a member of our team will follow up with you promptly.</p>
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" name="first_name" placeholder="John" required/>
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" name="last_name" placeholder="Smith" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" name="email" placeholder="john@company.com" required/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000"/>
+            </div>
+            <div class="form-group">
+              <label>Organization</label>
+              <input type="text" name="organization" placeholder="Company or Institution"/>
+            </div>
+            <div class="form-group">
+              <label>Area of Interest *</label>
+              <select name="interest" required>
+                <option value="" disabled selected>Select a service area…</option>
+                <option>Energy-Efficient Lighting</option>
+                <option>Charging Stations &amp; Transformers</option>
+                <option>Software &amp; Hardware Design</option>
+                <option>Alternative Energy Sources</option>
+                <option>General Inquiry</option>
+                <option>Partnership / Contracting</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea name="message" placeholder="Tell us about your project, timeline, or question…" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="map-section">
+    <div class="map-inner">
+      <p class="section-label" style="color:var(--gold-light); margin-bottom:20px">Our Location</p>
+      <div class="map-placeholder">
+        <span class="map-icon">📍</span>
+        <strong style="color:#a0a090; font-size:1rem;">RJ Casey Industrial Park, Pittsburgh, PA 15233</strong>
+        <p>Centrally located to serve over 50% of the U.S. market and 60% of the Canadian market, with east and west coast satellite offices.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="faq">
+    <div class="section-inner">
+      <p class="section-label">Common Questions</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="gold-rule"></div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>What industries do you serve?</h4>
+          <p>We serve industrial, commercial, government, educational, and healthcare clients across the U.S. and Canada. If you have a complex energy or technology challenge, we can help.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Are you eligible for government contracts?</h4>
+          <p>Yes. As a certified Veteran Owned Small Business (VOSB), Lights On America qualifies for federal set-aside contracts and numerous state and local supplier diversity programs.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How quickly can you respond to a project inquiry?</h4>
+          <p>We typically respond to all inquiries within one business day. For urgent projects, call us directly at 412-364-1600 for immediate assistance.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do you work on projects outside the United States?</h4>
+          <p>Yes — our reach extends throughout Canada as well. Our west coast and east coast offices also position us to serve international clients with North American operations.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can you handle large-scale or multi-site projects?</h4>
+          <p>Absolutely. We have the operational capacity and logistics network to manage large, complex, multi-site deployments across North America with consistent quality.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What makes Lights On America different?</h4>
+          <p>Our unique approach to solving complicated problems, our veteran-led discipline, and our 45+ years of experience mean clients receive solutions that truly work — not off-the-shelf products retrofitted to their needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="logo.svg" alt="Lights On America" class="footer-logo"/>
+          <p class="footer-about">Innovative leader in energy-efficient technology, advanced charging infrastructure, and custom software and hardware solutions. Serving North America for 45+ years.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#lighting">Energy Lighting</a></li>
+            <li><a href="services.html#charging">Charging Stations</a></li>
+            <li><a href="services.html#software">Software &amp; Hardware</a></li>
+            <li><a href="services.html#energy">Alternative Energy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>RJ Casey Industrial Park<br/>Pittsburgh, PA 15233<br/><br/><a href="tel:4123641600">412-364-1600</a><br/><a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a></address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024 The Drozd Group Inc. — Lights On America. All rights reserved.</span>
+        <span class="footer-vosb">★ Veteran Owned Small Business</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = '✓ Message Sent — We\'ll be in touch shortly.';
+      btn.style.background = '#2a6a2a';
+      btn.disabled = true;
+    }
+  </script>
+
+</body>
+</html>

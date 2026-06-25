@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services & Products — Lights On America</title>
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* ── SERVICE SECTIONS ── */
+    .service-section { padding: 88px 32px; }
+    .service-section:nth-child(odd) { background: var(--cream); }
+    .service-section:nth-child(even) { background: var(--off-white); }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .service-layout.reverse { direction: rtl; }
+    .service-layout.reverse > * { direction: ltr; }
+
+    .service-img {
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.14);
+      border: 1px solid rgba(200,148,10,0.15);
+    }
+    .service-img img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 16/10;
+      transition: transform 0.4s;
+    }
+    .service-img:hover img { transform: scale(1.03); }
+
+    .service-body p { font-size: 1rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 16px; }
+
+    .capability-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+      margin: 24px 0;
+    }
+    .capability-list li {
+      font-size: 0.86rem;
+      color: var(--text-mid);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .capability-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* ── OVERVIEW CARDS ── */
+    .overview { background: var(--dark2); }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 44px;
+    }
+    .overview-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(200,148,10,0.14);
+      border-radius: 5px;
+      padding: 28px 22px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .overview-card:hover {
+      background: rgba(200,148,10,0.07);
+      border-color: rgba(200,148,10,0.3);
+    }
+    .overview-card .ov-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .overview-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--gold-light); margin-bottom: 8px; }
+    .overview-card p { font-size: 0.80rem; color: #707060; line-height: 1.65; }
+
+    @media (max-width: 1024px) { .overview-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .service-layout, .service-layout.reverse { grid-template-columns: 1fr; direction: ltr; gap: 36px; }
+      .capability-list { grid-template-columns: 1fr; }
+      .overview-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="util-bar">
+    <div class="util-inner">
+      <div class="util-left">
+        <span>★ Veteran Owned Small Business (VOSB)</span>
+        <span class="util-divider">|</span>
+        <span>Pittsburgh, PA</span>
+      </div>
+      <div class="util-right">
+        <a href="tel:4123641600">412-364-1600</a>
+        <span class="util-divider">|</span>
+        <a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap"><img src="logo.svg" alt="Lights On America"/></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services &amp; Products</p>
+      <h1>Services &amp; Products</h1>
+      <p>From energy-efficient lighting to custom software systems, we deliver cutting-edge solutions engineered for performance, reliability, and long-term value.</p>
+    </div>
+  </div>
+
+  <!-- Quick nav -->
+  <section class="overview">
+    <div class="section-inner">
+      <p class="section-label" style="color:var(--gold-light)">Our Capabilities</p>
+      <h2 class="section-title light">Four Core Areas of Expertise</h2>
+      <div class="gold-rule"></div>
+      <div class="overview-grid">
+        <a href="#lighting" class="overview-card">
+          <span class="ov-icon">💡</span>
+          <h3>Energy-Efficient Lighting</h3>
+          <p>Advanced LED and smart lighting systems for industrial, commercial, and institutional applications.</p>
+        </a>
+        <a href="#charging" class="overview-card">
+          <span class="ov-icon">🔌</span>
+          <h3>Charging Stations &amp; Transformers</h3>
+          <p>State-of-the-art EV charging infrastructure and industrial-grade transformer solutions.</p>
+        </a>
+        <a href="#software" class="overview-card">
+          <span class="ov-icon">💻</span>
+          <h3>Software &amp; Hardware Design</h3>
+          <p>Custom-engineered computer systems and software built to exact operational specifications.</p>
+        </a>
+        <a href="#energy" class="overview-card">
+          <span class="ov-icon">☀️</span>
+          <h3>Alternative Energy Sources</h3>
+          <p>Solar, storage, and renewable hybrid systems designed to reduce grid dependence.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIGHTING ── -->
+  <section class="service-section" id="lighting">
+    <div class="section-inner">
+      <div class="service-layout">
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=80"
+            alt="Outdoor energy-efficient street and commercial lighting"
+          />
+        </div>
+        <div class="service-body">
+          <p class="section-label">Service 01</p>
+          <h2 class="section-title">Energy-Efficient Lighting</h2>
+          <div class="gold-rule"></div>
+          <p>Lights On America designs and deploys advanced LED and smart lighting systems that dramatically reduce energy consumption while delivering superior illumination quality. Our lighting solutions are engineered for long-term performance — cutting operational costs and environmental impact simultaneously.</p>
+          <p>From warehouses and manufacturing floors to campuses and government facilities, our systems are customized to meet each client's exact requirements — including integration with building management systems and automated controls.</p>
+          <ul class="capability-list">
+            <li>Commercial LED retrofits</li>
+            <li>Industrial high-bay lighting</li>
+            <li>Smart lighting controls</li>
+            <li>Emergency & safety lighting</li>
+            <li>Outdoor & perimeter lighting</li>
+            <li>Campus-wide installations</li>
+            <li>Energy auditing & analysis</li>
+            <li>BMS/SCADA integration</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHARGING ── -->
+  <section class="service-section" id="charging">
+    <div class="section-inner">
+      <div class="service-layout reverse">
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=80"
+            alt="EV charging station infrastructure"
+          />
+        </div>
+        <div class="service-body">
+          <p class="section-label">Service 02</p>
+          <h2 class="section-title">Charging Stations &amp; Transformers</h2>
+          <div class="gold-rule"></div>
+          <p>As the electrification of transportation accelerates, Lights On America delivers state-of-the-art EV charging infrastructure and industrial transformer solutions built for reliability, scalability, and modern grid compatibility.</p>
+          <p>Our transformer expertise spans decades — we design, source, and install high-performance transformers for industrial and commercial applications where reliability is non-negotiable. Combined with our EV charging capabilities, we offer a complete electrical infrastructure solution.</p>
+          <ul class="capability-list">
+            <li>Level 2 EV charging stations</li>
+            <li>DC fast charging (DCFC)</li>
+            <li>Fleet charging solutions</li>
+            <li>Charging network management</li>
+            <li>Distribution transformers</li>
+            <li>Pad-mounted transformers</li>
+            <li>Power conditioning units</li>
+            <li>Grid integration services</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOFTWARE & HARDWARE ── -->
+  <section class="service-section" id="software">
+    <div class="section-inner">
+      <div class="service-layout">
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+            alt="Custom computer hardware and circuit board design"
+          />
+        </div>
+        <div class="service-body">
+          <p class="section-label">Service 03</p>
+          <h2 class="section-title">Software &amp; Hardware Design</h2>
+          <div class="gold-rule"></div>
+          <p>Lights On America designs and engineers custom computer software and hardware systems for clients who need precise, purpose-built technology. We specialize in creating cutting-edge solutions to complicated problems — approaching each challenge with fresh eyes and deep technical expertise.</p>
+          <p>Our engineering team works directly with clients to understand operational requirements and deliver systems that integrate seamlessly into existing workflows — reducing friction, eliminating inefficiencies, and opening new operational possibilities.</p>
+          <ul class="capability-list">
+            <li>Custom embedded systems</li>
+            <li>Industrial control software</li>
+            <li>Hardware prototyping & design</li>
+            <li>Systems integration</li>
+            <li>SCADA & automation</li>
+            <li>Legacy system modernization</li>
+            <li>Real-time monitoring platforms</li>
+            <li>Firmware development</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ALTERNATIVE ENERGY ── -->
+  <section class="service-section" id="energy">
+    <div class="section-inner">
+      <div class="service-layout reverse">
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80"
+            alt="Solar panel array alternative energy installation"
+          />
+        </div>
+        <div class="service-body">
+          <p class="section-label">Service 04</p>
+          <h2 class="section-title">Alternative Energy Sources</h2>
+          <div class="gold-rule"></div>
+          <p>Lights On America designs and implements renewable energy systems that reduce dependence on traditional power grids, lower operational costs, and support long-term sustainability goals. We work with solar, energy storage, and hybrid systems tailored to each facility's unique energy profile.</p>
+          <p>Our alternative energy solutions are engineered not just for environmental benefit but for financial performance — with careful modeling of ROI, payback periods, and long-term energy savings built into every project proposal.</p>
+          <ul class="capability-list">
+            <li>Commercial solar design & install</li>
+            <li>Battery energy storage systems</li>
+            <li>Solar + EV charging integration</li>
+            <li>Microgrid development</li>
+            <li>Energy management software</li>
+            <li>Power purchase agreements</li>
+            <li>Renewable energy auditing</li>
+            <li>Wind energy solutions</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="section-inner">
+      <h2>Not Sure Which Solution Fits Your Needs?</h2>
+      <p>Our team specializes in unique approaches to complicated problems. Tell us your challenge and we'll engineer the solution.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Talk to an Expert</a>
+        <a href="about.html" class="btn-outline">Learn About Us</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="logo.svg" alt="Lights On America" class="footer-logo"/>
+          <p class="footer-about">Innovative leader in energy-efficient technology, advanced charging infrastructure, and custom software and hardware solutions. Serving North America for 45+ years.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#lighting">Energy Lighting</a></li>
+            <li><a href="#charging">Charging Stations</a></li>
+            <li><a href="#software">Software &amp; Hardware</a></li>
+            <li><a href="#energy">Alternative Energy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>RJ Casey Industrial Park<br/>Pittsburgh, PA 15233<br/><br/><a href="tel:4123641600">412-364-1600</a><br/><a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a></address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024 The Drozd Group Inc. — Lights On America. All rights reserved.</span>
+        <span class="footer-vosb">★ Veteran Owned Small Business</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
