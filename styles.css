@@ -45,6 +45,30 @@ body {
 .util-left, .util-right { display: flex; gap: 20px; align-items: center; }
 .util-divider { color: rgba(200,148,10,0.3); }
 
+/* ── VOSB POPUP ── */
+.vosb-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.vosb-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 9999;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(200,148,10,0.3);
+  width: 260px;
+}
+.vosb-popup img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.vosb-tooltip-wrap:hover .vosb-popup,
+.vosb-tooltip-wrap.open .vosb-popup { display: block; }
+
 /* ── HEADER ── */
 header {
   background: var(--dark2);

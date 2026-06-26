@@ -183,7 +183,13 @@
   <div class="util-bar">
     <div class="util-inner">
       <div class="util-left">
-        <span style="display:inline-flex;align-items:center;gap:6px;"><img src="vosb.png" alt="VOSB" style="height:24px;width:auto;vertical-align:middle;"/> Veteran Owned Small Business</span>
+        <span class="vosb-tooltip-wrap" onclick="this.classList.toggle('open')" title="Click to pin">
+          <img src="vosb.png" alt="VOSB" style="height:24px;width:auto;vertical-align:middle;"/>
+          <span style="margin-left:6px;">Veteran Owned Small Business</span>
+          <div class="vosb-popup">
+            <img src="vosb.png" alt="VOSB — Veteran Owned Small Business Certified"/>
+          </div>
+        </span>
         <span class="util-divider">|</span>
         <span>Pittsburgh, PA</span>
       </div>
