@@ -66,8 +66,7 @@ body {
   width: 260px;
 }
 .vosb-popup img { width: 100%; height: auto; display: block; border-radius: 4px; }
-.vosb-tooltip-wrap:hover .vosb-popup,
-.vosb-tooltip-wrap.open .vosb-popup { display: block; }
+.vosb-tooltip-wrap:hover .vosb-popup { display: block; }
 
 /* ── HEADER ── */
 header {
