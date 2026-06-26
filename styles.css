@@ -11,7 +11,7 @@
   --cream:      #faf7f0;
   --text:       #1a1a14;
   --text-mid:   #4a4a3a;
-  --serif:      'Libre Baskerville', 'Baskerville', Georgia, serif;
+  --serif:      'Space Grotesk', 'Trebuchet MS', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
