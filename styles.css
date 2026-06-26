@@ -63,7 +63,7 @@ header {
   justify-content: space-between;
   gap: 24px;
 }
-.logo-wrap img { height: 37px; width: auto; display: block; }
+.logo-wrap img { height: 42px; width: auto; display: block; }
 
 nav { display: flex; gap: 4px; align-items: center; }
 nav a {
