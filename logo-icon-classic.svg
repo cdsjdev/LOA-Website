@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0a0a0a"/>
+      <stop offset="45%"  stop-color="#181814"/>
+      <stop offset="50%"  stop-color="#101010"/>
+      <stop offset="100%" stop-color="#060606"/>
+    </linearGradient>
+
+    <!-- Radial gold glow from center -->
+    <radialGradient id="radialGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%"   stop-color="#c87800" stop-opacity="0.55"/>
+      <stop offset="40%"  stop-color="#8a5000" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Horizontal gold stripe -->
+    <linearGradient id="stripe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#000" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#6a3800" stop-opacity="0.4"/>
+      <stop offset="46%"  stop-color="#c87800" stop-opacity="0.85"/>
+      <stop offset="50%"  stop-color="#f0b800" stop-opacity="0.9"/>
+      <stop offset="54%"  stop-color="#c87800" stop-opacity="0.85"/>
+      <stop offset="70%"  stop-color="#6a3800" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Chrome metallic for letters (matches banner logo) -->
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="10%"  stop-color="#e0e0e0"/>
+      <stop offset="25%"  stop-color="#a8a8a8"/>
+      <stop offset="42%"  stop-color="#f0f0f0"/>
+      <stop offset="52%"  stop-color="#ffffff"/>
+      <stop offset="66%"  stop-color="#c0c0c0"/>
+      <stop offset="82%"  stop-color="#848484"/>
+      <stop offset="100%" stop-color="#686868"/>
+    </linearGradient>
+
+    <!-- Gold for decorative elements -->
+    <linearGradient id="goldDecor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffe066"/>
+      <stop offset="40%"  stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#b88000"/>
+    </linearGradient>
+
+    <filter id="glow" x="-15%" y="-50%" width="130%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="clip">
+      <rect x="10" y="10" width="492" height="492" rx="64" ry="64"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- Background -->
+  <rect x="10" y="10" width="492" height="492" rx="64" ry="64"
+        fill="url(#bg)" stroke="#3a3820" stroke-width="3"/>
+  <!-- Inner border -->
+  <rect x="16" y="16" width="480" height="480" rx="60" ry="60"
+        fill="none" stroke="#a08040" stroke-width="1.5" opacity="0.6"/>
+  <!-- Second inner border -->
+  <rect x="22" y="22" width="468" height="468" rx="56" ry="56"
+        fill="none" stroke="#705020" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Radial glow -->
+  <rect x="10" y="10" width="492" height="492" rx="64" ry="64"
+        fill="url(#radialGlow)" clip-path="url(#clip)"/>
+
+  <!-- Gold stripe -->
+  <rect x="10" y="10" width="492" height="492" rx="64" ry="64"
+        fill="url(#stripe)" clip-path="url(#clip)" filter="url(#glow)"/>
+
+  <!-- ── Three gold stars at top ── -->
+  <g fill="url(#goldDecor)" filter="url(#glow)">
+    <!-- Center star -->
+    <polygon points="256,68  263,90  286,90  268,103  275,125  256,112  237,125  244,103  226,90  249,90"/>
+    <!-- Left star -->
+    <polygon points="170,75  176,93  195,93  180,104  186,122  170,111  154,122  160,104  145,93  164,93"/>
+    <!-- Right star -->
+    <polygon points="342,75  348,93  367,93  352,104  358,122  342,111  326,122  332,104  317,93  336,93"/>
+  </g>
+
+  <!-- Thin gold rule below stars -->
+  <line x1="60" y1="138" x2="452" y2="138"
+        stroke="url(#goldDecor)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- ── "LOA" in classic bold serif, scale(0.9,1) to match banner ── -->
+  <g font-family="'Baskerville','Didot','Georgia','Times New Roman',serif"
+     font-size="230" font-weight="700"
+     text-anchor="middle"
+     transform="translate(256,0) scale(0.9,1) translate(-256,0)">
+
+    <text x="256" y="330" fill="#000"    transform="translate(8,8)">LOA</text>
+    <text x="256" y="330" fill="#111108" transform="translate(6,6)">LOA</text>
+    <text x="256" y="330" fill="#252516" transform="translate(4,4)">LOA</text>
+    <text x="256" y="330" fill="#383820" transform="translate(2,2)">LOA</text>
+    <text x="256" y="330" fill="#444428" transform="translate(1,1)">LOA</text>
+
+    <text x="256" y="330" fill="none"
+          stroke="#000" stroke-width="9" stroke-linejoin="round">LOA</text>
+
+    <text x="256" y="330" fill="url(#chrome)">LOA</text>
+
+    <text x="256" y="330" fill="none"
+          stroke="#fff" stroke-width="2" stroke-linejoin="round" opacity="0.4">LOA</text>
+  </g>
+
+  <!-- Thin gold rule above subtitle -->
+  <line x1="60" y1="362" x2="452" y2="362"
+        stroke="url(#goldDecor)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Subtitle: LIGHTS ON AMERICA -->
+  <text x="256" y="400"
+        font-family="'Baskerville','Georgia','Times New Roman',serif"
+        font-size="28" font-weight="700" font-style="normal"
+        text-anchor="middle" letter-spacing="5"
+        fill="url(#goldDecor)" opacity="0.9">LIGHTS ON AMERICA</text>
+
+  <!-- Bottom decorative dots -->
+  <g fill="url(#goldDecor)" opacity="0.7">
+    <circle cx="188" cy="430" r="3"/>
+    <circle cx="210" cy="430" r="3"/>
+    <circle cx="256" cy="430" r="4"/>
+    <circle cx="302" cy="430" r="3"/>
+    <circle cx="324" cy="430" r="3"/>
+  </g>
+
+</svg>
