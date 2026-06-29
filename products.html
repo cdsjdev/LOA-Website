@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lighting Products & Supply — Lights On America</title>
+  <meta name="description" content="Commercial and industrial lighting products supplied by Lights On America — LED tubes, lamps, ballasts, fixtures, and controls. Request a quote for any quantity."/>
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* ── PRODUCT CATEGORY GRID ── */
+    .products-intro { background: var(--cream); }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 44px;
+    }
+    .product-card {
+      background: white;
+      border: 1px solid #e4e0d4;
+      border-radius: 6px;
+      padding: 32px 28px;
+      transition: box-shadow 0.25s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold-light));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-3px); }
+    .product-card:hover::before { opacity: 1; }
+    .product-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+    .product-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .product-card p { font-size: 0.86rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 14px; }
+    .product-card ul { list-style: none; }
+    .product-card ul li {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .product-card ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); }
+
+    /* ── CAPABILITIES STRIP ── */
+    .supply-points { background: var(--dark2); }
+    .supply-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 44px;
+    }
+    .supply-item h3 { font-size: 0.95rem; color: var(--gold-light); font-weight: 700; margin-bottom: 8px; }
+    .supply-item p { font-size: 0.84rem; color: #808070; line-height: 1.7; }
+
+    /* ── QUOTE FORM ── */
+    .quote-main { background: var(--off-white); }
+    .quote-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+    .quote-info h2 { font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .quote-info > p { font-size: 0.97rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 24px; }
+    .quote-assure { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+    .quote-assure-item {
+      background: white;
+      border: 1px solid #e4e0d4;
+      border-left: 3px solid var(--gold);
+      border-radius: 5px;
+      padding: 16px 20px;
+    }
+    .quote-assure-item h4 { font-size: 0.84rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .quote-assure-item p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
+
+    .form-card {
+      background: white;
+      border: 1px solid #e4e0d4;
+      border-radius: 6px;
+      padding: 44px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .form-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .form-card > p { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 28px; }
+    .form-group { margin-bottom: 18px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group label { display: block; font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); font-weight: 700; margin-bottom: 7px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      border: 1.5px solid #dedad2;
+      border-radius: 3px;
+      padding: 11px 14px;
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #fdfcf9;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200,148,10,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; margin-top: 8px; }
+    .form-note { font-size: 0.74rem; color: #888878; margin-top: 14px; text-align: center; }
+
+    @media (max-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .supply-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .quote-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .supply-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="util-bar">
+    <div class="util-inner">
+      <div class="util-left">
+        <span class="vosb-tooltip-wrap">
+          <img src="vosb.png" alt="VOSB" style="height:19px;width:auto;vertical-align:middle;"/>
+          <span style="margin-left:6px;">Veteran Owned Small Business</span>
+          <div class="vosb-popup">
+            <img src="vosb.png" alt="VOSB — Veteran Owned Small Business Certified"/>
+          </div>
+        </span>
+        <span class="util-divider">|</span>
+        <span>Pittsburgh, PA</span>
+      </div>
+      <div class="util-right">
+        <a href="tel:4123641600">412-364-1600</a>
+        <span class="util-divider">|</span>
+        <a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap"><img src="logo.svg" alt="Lights On America"/></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="government.html">Government</a>
+        <a href="software.html">Software</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Lighting Products</p>
+      <h1>Lighting Products &amp; Supply</h1>
+      <p>A reliable supply partner for commercial, industrial, and institutional lighting — LED tubes, lamps, ballasts, fixtures, and controls. Tell us what you need and we'll quote it.</p>
+    </div>
+  </div>
+
+  <!-- ── PRODUCT CATEGORIES ── -->
+  <section class="products-intro">
+    <div class="section-inner">
+      <p class="section-label">What We Supply</p>
+      <h2 class="section-title">Product Categories</h2>
+      <div class="gold-rule"></div>
+      <p style="max-width:680px; color:var(--text-mid); line-height:1.85;">We source new, OEM-quality lighting products from established manufacturers and distributors. We are not a retail storefront — we supply by quote, which lets us match exact specifications, certifications, and quantities to your project or contract.</p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <span class="product-icon">💡</span>
+          <h3>LED Tubes &amp; Lamps</h3>
+          <p>Energy-efficient replacements across the most common form factors.</p>
+          <ul>
+            <li>T8 / T5 LED tubes (Type A, B, C)</li>
+            <li>Ballast-bypass &amp; plug-and-play</li>
+            <li>HID &amp; metal halide lamps</li>
+            <li>2 ft / 3 ft / 4 ft / 8 ft lengths</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <span class="product-icon">🔧</span>
+          <h3>Ballasts &amp; Drivers</h3>
+          <p>Dimming and non-dimming ballasts and LED drivers from leading brands.</p>
+          <ul>
+            <li>0-10V dimming ballasts</li>
+            <li>Programmed-start &amp; instant-start</li>
+            <li>LED drivers, constant current/voltage</li>
+            <li>Philips Advance, Signify &amp; equivalents</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <span class="product-icon">🏭</span>
+          <h3>Fixtures &amp; High-Bay</h3>
+          <p>Complete luminaires for warehouses, facilities, and outdoor areas.</p>
+          <ul>
+            <li>LED high-bay &amp; low-bay</li>
+            <li>Troffers &amp; panel fixtures</li>
+            <li>Wall packs &amp; flood lighting</li>
+            <li>Area &amp; parking-lot fixtures</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <span class="product-icon">🎛️</span>
+          <h3>Controls &amp; Sensors</h3>
+          <p>Smart controls that extend savings and meet code requirements.</p>
+          <ul>
+            <li>Occupancy &amp; vacancy sensors</li>
+            <li>Daylight harvesting controls</li>
+            <li>0-10V &amp; networked dimming</li>
+            <li>Photocells &amp; timeclocks</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <span class="product-icon">🚨</span>
+          <h3>Emergency &amp; Exit</h3>
+          <p>Life-safety lighting that satisfies inspection and code.</p>
+          <ul>
+            <li>LED exit signs</li>
+            <li>Emergency battery units</li>
+            <li>Combo exit/emergency</li>
+            <li>Backup drivers &amp; inverters</li>
+          </ul>
+        </div>
+        <div class="product-card">
+          <span class="product-icon">🔩</span>
+          <h3>Accessories &amp; Hardware</h3>
+          <p>The supporting components that complete a project.</p>
+          <ul>
+            <li>Lamp holders &amp; sockets (G13, E26)</li>
+            <li>Mounting hardware &amp; brackets</li>
+            <li>Wire, connectors &amp; tombstones</li>
+            <li>Replacement lenses &amp; covers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY SOURCE FROM US ── -->
+  <section class="supply-points">
+    <div class="section-inner">
+      <p class="section-label" style="color:var(--gold-light)">Why Source From Us</p>
+      <h2 class="section-title light">A Supply Partner, Not Just a Catalog</h2>
+      <div class="gold-rule"></div>
+      <div class="supply-grid">
+        <div class="supply-item">
+          <h3>Spec-Matched Quotes</h3>
+          <p>We confirm exact wattage, CCT, base, certifications (UL/ETL/DLC), and condition before we quote — no guesswork.</p>
+        </div>
+        <div class="supply-item">
+          <h3>Any Quantity</h3>
+          <p>From a single replacement run to a multi-year contract order. We scale sourcing to the job.</p>
+        </div>
+        <div class="supply-item">
+          <h3>Delivered Pricing</h3>
+          <p>Quotes can be delivered/FOB-destination with freight included — clear, all-in pricing with no surprises.</p>
+        </div>
+        <div class="supply-item">
+          <h3>VOSB Eligible</h3>
+          <p>As a Veteran Owned Small Business, we qualify for set-aside and supplier-diversity purchasing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REQUEST A QUOTE ── -->
+  <section class="quote-main" id="quote">
+    <div class="section-inner">
+      <div class="quote-grid">
+
+        <div class="quote-info">
+          <p class="section-label">Request a Quote</p>
+          <h2>Tell Us What You Need</h2>
+          <div class="gold-rule"></div>
+          <p>Share your product list, quantities, and delivery location. We'll come back with spec-matched pricing and lead times — typically within one to two business days.</p>
+
+          <div class="quote-assure">
+            <div class="quote-assure-item">
+              <h4>No obligation</h4>
+              <p>A quote is just a quote. We're happy to help you scope a project or compare options.</p>
+            </div>
+            <div class="quote-assure-item">
+              <h4>Bring your spec sheet</h4>
+              <p>Have model numbers or a bid line-item list? Paste it in the message and we'll match it exactly.</p>
+            </div>
+            <div class="quote-assure-item">
+              <h4>Prefer to talk?</h4>
+              <p>Call <a href="tel:4123641600" style="color:var(--gold-dark); font-weight:700;">412-364-1600</a> and ask for sourcing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Quote Request</h3>
+          <p>Fill out the form below and our sourcing team will follow up promptly.</p>
+          <form id="quote-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms access key (public by design — embedded in client HTML).
+                 Submissions are emailed to contact@lightsonamerica.com. -->
+            <input type="hidden" name="access_key" value="dea29fb6-cef4-41fc-8dc0-2ce910a62d24"/>
+            <input type="hidden" name="subject" value="New Lighting Quote Request — lightsonamerica.com"/>
+            <input type="hidden" name="from_name" value="LoA Website — Products Page"/>
+            <!-- Honeypot spam field -->
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off"/>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" name="first_name" placeholder="John" required/>
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" name="last_name" placeholder="Smith" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" name="email" placeholder="john@company.com" required/>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="(555) 000-0000"/>
+              </div>
+              <div class="form-group">
+                <label>Organization</label>
+                <input type="text" name="organization" placeholder="Company or agency"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Product Category</label>
+              <select name="category">
+                <option value="" disabled selected>Select a category…</option>
+                <option>LED Tubes &amp; Lamps</option>
+                <option>Ballasts &amp; Drivers</option>
+                <option>Fixtures &amp; High-Bay</option>
+                <option>Controls &amp; Sensors</option>
+                <option>Emergency &amp; Exit</option>
+                <option>Accessories &amp; Hardware</option>
+                <option>Multiple / Mixed</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Delivery ZIP / City</label>
+                <input type="text" name="delivery_location" placeholder="Detroit, MI 48226"/>
+              </div>
+              <div class="form-group">
+                <label>Target Date</label>
+                <input type="text" name="target_date" placeholder="e.g. within 30 days"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Items &amp; Quantities *</label>
+              <textarea name="message" placeholder="List model numbers, specs, and quantities. Example:&#10;- 4 ft T8 Type B LED tube, 9W, 4000K — 400 ea&#10;- Mark 7 IZT-2S28-D ballast — 36 ea" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">Request Quote</button>
+            <p class="form-note">We respond to quote requests within 1–2 business days.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="logo.svg" alt="Lights On America" class="footer-logo"/>
+          <p class="footer-about">Innovative leader in energy-efficient technology, advanced charging infrastructure, and custom software and hardware solutions. Serving North America for 45+ years.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Lighting</h4>
+          <ul>
+            <li><a href="products.html">Products &amp; Supply</a></li>
+            <li><a href="government.html">Government Contracts</a></li>
+            <li><a href="software.html">Lighting Software</a></li>
+            <li><a href="products.html#quote">Request a Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>RJ Casey Industrial Park<br/>Pittsburgh, PA 15233<br/><br/><a href="tel:4123641600">412-364-1600</a><br/><a href="mailto:info@thedrozdgroup.com">info@thedrozdgroup.com</a></address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024 The Drozd Group Inc. — Lights On America. All rights reserved.</span>
+        <span class="footer-vosb">★ Veteran Owned Small Business</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Web3Forms AJAX submit with inline success state (no page reload).
+    const form = document.getElementById('quote-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        const data = await res.json();
+        if (data.success) {
+          btn.textContent = '✓ Quote Request Sent — We\'ll be in touch shortly.';
+          btn.style.background = '#2a6a2a';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = original;
+        alert('Sorry, something went wrong. Please call 412-364-1600 or email contact@lightsonamerica.com.');
+      }
+    });
+  </script>
+
+</body>
+</html>
