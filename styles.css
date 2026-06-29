@@ -106,7 +106,8 @@ nav a.active { color: var(--gold-light); }
 .nav-cta {
   background: var(--gold) !important;
   color: #0c0c0a !important;
-  padding: 9px 20px !important;
+  font-size: 0.74rem !important;
+  padding: 6px 15px !important;
   margin-left: 8px;
 }
 .nav-cta:hover { background: var(--gold-light) !important; }
