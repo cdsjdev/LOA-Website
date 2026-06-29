@@ -63,7 +63,7 @@ body {
   padding: 10px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.4);
   border: 1px solid rgba(200,148,10,0.3);
-  width: 260px;
+  width: 208px;
 }
 .vosb-popup img { width: 100%; height: auto; display: block; border-radius: 4px; }
 .vosb-tooltip-wrap:hover .vosb-popup { display: block; }
