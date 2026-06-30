@@ -37,10 +37,10 @@ body {
   align-items: center;
   gap: 16px;
   font-size: 0.74rem;
-  color: #888878;
+  color: #c4c0ad;
   letter-spacing: 0.05em;
 }
-.util-inner a { color: #888878; text-decoration: none; transition: color 0.2s; }
+.util-inner a { color: #c4c0ad; text-decoration: none; transition: color 0.2s; }
 .util-inner a:hover { color: var(--gold-light); }
 .util-left, .util-right { display: flex; gap: 20px; align-items: center; }
 .util-divider { color: rgba(200,148,10,0.3); }
