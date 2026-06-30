@@ -89,6 +89,25 @@ header {
 .logo-wrap img { height: 42px; width: auto; display: block; }
 
 nav { display: flex; gap: 4px; align-items: center; }
+
+/* Hamburger toggle — hidden on desktop, shown on mobile */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(200,148,10,0.4);
+  border-radius: 4px;
+  padding: 7px 9px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold-light);
+  transition: transform 0.25s, opacity 0.25s;
+}
 nav a {
   font-family: var(--serif);
   font-size: 0.82rem;
@@ -302,18 +321,67 @@ footer {
 }
 
 /* ── RESPONSIVE ── */
+/* Global guard: prevent sideways scroll without breaking position:sticky.
+   overflow-x:clip (unlike hidden) does NOT create a scroll container,
+   so the sticky header keeps working on mobile. Applied to body only —
+   never html — so html remains the sticky scroll context. */
+body { overflow-x: clip; }
+
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 @media (max-width: 768px) {
-  nav a:not(.nav-cta) { display: none; }
+  /* Mobile util-bar: keep only the VOSB badge; drop location + phone/email */
+  .util-right { display: none; }
+  .util-left > .util-divider,
+  .util-left > span:not(.vosb-tooltip-wrap) { display: none; }
+  .util-inner { justify-content: center; }
+
+  /* Show hamburger; nav becomes a slide-down panel */
+  .nav-toggle { display: flex; }
+  .header-inner { position: relative; flex-wrap: wrap; }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    order: 3;
+    margin-top: 12px;
+    border-top: 1px solid rgba(200,148,10,0.18);
+    padding-top: 8px;
+  }
+  .header-inner.nav-open nav { display: flex; }
+  nav a {
+    padding: 13px 8px;
+    border-bottom: 1px solid rgba(200,148,10,0.08);
+  }
+  nav a:last-child { border-bottom: none; }
+  .nav-cta {
+    margin-left: 0 !important;
+    margin-top: 8px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  /* Trim oversized desktop side-padding so nothing exceeds the viewport */
+  .util-bar { padding: 7px 18px; }
+  .header-inner { padding: 12px 18px; gap: 12px; }
+  .logo-wrap img { height: 34px; }
+  .page-hero { padding: 44px 18px 40px; }
+  .page-hero p { font-size: 0.98rem; }
+  section { padding: 56px 18px; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
   .stat-item { border-right: none; border-bottom: 1px solid rgba(200,148,10,0.1); padding: 14px 8px; }
   .stat-item:last-child { border-bottom: none; }
-  section { padding: 56px 20px; }
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
 }
 @media (max-width: 480px) {
   .stats-inner { grid-template-columns: 1fr; }
-  .util-bar { display: none; }
+  /* Util-bar shows only the centered VOSB badge */
+  .util-bar { padding: 7px 14px; }
+  .logo-wrap img { height: 30px; }
+  .header-inner { padding: 12px 14px; }
+  section { padding: 48px 16px; }
+  .page-hero { padding: 36px 16px 32px; }
 }

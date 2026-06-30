@@ -6,7 +6,7 @@
   <title>Lights On America — Innovative Energy & Technology Solutions</title>
   <link rel="icon" type="image/svg+xml" href="logo-icon.svg"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css?v=7"/>
   <style>
     /* ── HOME HERO ── */
     .hero {
@@ -71,6 +71,7 @@
       gap: 24px;
       margin-top: 44px;
     }
+    .services-grid-3 { grid-template-columns: repeat(3, 1fr); }
     .service-card {
       background: white;
       border: 1px solid #e4e0d4;
@@ -170,11 +171,11 @@
       border: 1px solid rgba(200,148,10,0.2);
     }
 
-    @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1024px) { .services-grid, .services-grid-3 { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
       .intro-grid, .leader-teaser-grid { grid-template-columns: 1fr; gap: 36px; }
       .why-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid, .services-grid-3 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -204,6 +205,7 @@
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo-wrap"><img src="logo.svg" alt="Lights On America"/></a>
+      <button class="nav-toggle" aria-label="Menu" onclick="this.closest('.header-inner').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
       <nav>
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
@@ -302,7 +304,7 @@
       <h2 class="section-title">A Dedicated Lighting Practice</h2>
       <div class="gold-rule"></div>
       <p style="max-width:680px; color:var(--text-mid); line-height:1.85; margin-bottom:8px;">Beyond project services, Lights On America supplies lighting products, bids public-sector contracts as a Veteran Owned Small Business, and builds software for the lighting trade.</p>
-      <div class="services-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="services-grid services-grid-3">
         <a href="products.html" class="service-card">
           <span class="service-icon">🔦</span>
           <h3>Lighting Products &amp; Supply</h3>

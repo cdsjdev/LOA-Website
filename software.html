@@ -7,7 +7,7 @@
   <meta name="description" content="Software for lighting distributors and contractors: RFP and bid automation, quote building, catalog and SKU management, and sourcing tools. Built by Lights On America."/>
   <link rel="icon" type="image/svg+xml" href="logo-icon.svg"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css?v=7"/>
   <style>
     /* ── PROBLEM/SOLUTION INTRO ── */
     .sw-intro { background: var(--cream); }
@@ -97,6 +97,7 @@
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo-wrap"><img src="logo.svg" alt="Lights On America"/></a>
+      <button class="nav-toggle" aria-label="Menu" onclick="this.closest('.header-inner').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
