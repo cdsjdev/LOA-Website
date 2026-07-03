@@ -10,10 +10,11 @@
     </style>
 
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#0a0a0a"/>
-      <stop offset="40%"  stop-color="#1a1a14"/>
-      <stop offset="50%"  stop-color="#111110"/>
-      <stop offset="100%" stop-color="#060606"/>
+      <stop offset="0%"   stop-color="#3a3222"/>
+      <stop offset="40%"  stop-color="#4a3d1e"/>
+      <stop offset="50%"  stop-color="#524212"/>
+      <stop offset="60%"  stop-color="#4a3d1e"/>
+      <stop offset="100%" stop-color="#2a2416"/>
     </linearGradient>
 
     <linearGradient id="stripe" x1="0" y1="0" x2="0" y2="1">
@@ -47,6 +48,13 @@
     </clipPath>
 
   </defs>
+
+  <rect x="8" y="8" width="1424" height="202" rx="28" ry="28"
+        fill="url(#bg)" stroke="#e0a820" stroke-width="4"/>
+  <rect x="13" y="13" width="1414" height="192" rx="25" ry="25"
+        fill="none" stroke="#f0c040" stroke-width="1.5" opacity="0.6"/>
+  <rect x="8" y="8" width="1424" height="202" rx="28" ry="28"
+        fill="url(#stripe)" clip-path="url(#clip)" filter="url(#glow)"/>
 
   <g font-family="IBMPlexSerif, 'IBM Plex Serif', Georgia, serif"
      font-size="154" font-weight="700" font-style="normal"
