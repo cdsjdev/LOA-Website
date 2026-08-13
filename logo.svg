@@ -10,31 +10,31 @@
     </style>
 
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#0a0a0a"/>
-      <stop offset="40%"  stop-color="#1a1a14"/>
-      <stop offset="50%"  stop-color="#111110"/>
-      <stop offset="100%" stop-color="#060606"/>
+      <stop offset="0%"   stop-color="#241f10"/>
+      <stop offset="40%"  stop-color="#332a10"/>
+      <stop offset="50%"  stop-color="#3a2e08"/>
+      <stop offset="100%" stop-color="#1a1608"/>
     </linearGradient>
 
     <linearGradient id="stripe" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="#000" stop-opacity="0"/>
-      <stop offset="28%"  stop-color="#6a3800" stop-opacity="0.5"/>
-      <stop offset="45%"  stop-color="#d08000" stop-opacity="1"/>
-      <stop offset="50%"  stop-color="#f8c800" stop-opacity="1"/>
-      <stop offset="55%"  stop-color="#d08000" stop-opacity="1"/>
-      <stop offset="72%"  stop-color="#6a3800" stop-opacity="0.5"/>
+      <stop offset="28%"  stop-color="#8a5800" stop-opacity="0.6"/>
+      <stop offset="45%"  stop-color="#e8a800" stop-opacity="1"/>
+      <stop offset="50%"  stop-color="#ffd84a" stop-opacity="1"/>
+      <stop offset="55%"  stop-color="#e8a800" stop-opacity="1"/>
+      <stop offset="72%"  stop-color="#8a5800" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#000" stop-opacity="0"/>
     </linearGradient>
 
     <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="#ffffff"/>
-      <stop offset="10%"  stop-color="#e0e0e0"/>
-      <stop offset="25%"  stop-color="#a8a8a8"/>
-      <stop offset="42%"  stop-color="#f0f0f0"/>
+      <stop offset="10%"  stop-color="#ffffff"/>
+      <stop offset="25%"  stop-color="#dcdcdc"/>
+      <stop offset="42%"  stop-color="#ffffff"/>
       <stop offset="52%"  stop-color="#ffffff"/>
-      <stop offset="66%"  stop-color="#c0c0c0"/>
-      <stop offset="82%"  stop-color="#848484"/>
-      <stop offset="100%" stop-color="#686868"/>
+      <stop offset="66%"  stop-color="#eaeaea"/>
+      <stop offset="82%"  stop-color="#c4c4c4"/>
+      <stop offset="100%" stop-color="#aaaaaa"/>
     </linearGradient>
 
     <filter id="glow" x="-2%" y="-100%" width="104%" height="300%">
