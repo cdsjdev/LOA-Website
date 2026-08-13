@@ -10,11 +10,11 @@
     </style>
 
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#4a3d20"/>
-      <stop offset="40%"  stop-color="#5e4c1e"/>
-      <stop offset="50%"  stop-color="#685012"/>
-      <stop offset="60%"  stop-color="#5e4c1e"/>
-      <stop offset="100%" stop-color="#382e18"/>
+      <stop offset="0%"   stop-color="#563d18"/>
+      <stop offset="40%"  stop-color="#6e4a14"/>
+      <stop offset="50%"  stop-color="#7a4e0a"/>
+      <stop offset="60%"  stop-color="#6e4a14"/>
+      <stop offset="100%" stop-color="#402a10"/>
     </linearGradient>
 
     <linearGradient id="stripe" x1="0" y1="0" x2="0" y2="1">

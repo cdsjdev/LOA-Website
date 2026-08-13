@@ -10,10 +10,10 @@
     </style>
 
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#241f10"/>
-      <stop offset="40%"  stop-color="#332a10"/>
-      <stop offset="50%"  stop-color="#3a2e08"/>
-      <stop offset="100%" stop-color="#1a1608"/>
+      <stop offset="0%"   stop-color="#2c1f0e"/>
+      <stop offset="40%"  stop-color="#40290c"/>
+      <stop offset="50%"  stop-color="#482c06"/>
+      <stop offset="100%" stop-color="#231506"/>
     </linearGradient>
 
     <linearGradient id="stripe" x1="0" y1="0" x2="0" y2="1">
